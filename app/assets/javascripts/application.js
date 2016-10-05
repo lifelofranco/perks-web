@@ -9,7 +9,6 @@
 //= require angular-animate
 //= require angular/app
 //= require angular/i18n
-//= require angular/auth0
 //= require angular/routes
 //= require angular/ng_rails_csrf
 //= require angular/ngDialog
