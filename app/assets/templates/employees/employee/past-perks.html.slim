@@ -1,0 +1,45 @@
+.my-perks
+  h4.dashboard-title.inline
+    | Past Perks
+  select.inline ng-change="selectFilter('past')" ng-model="filter" ng-options="value.id as value.label for value in pastPerkFilterOptions"
+    option value=""
+      | Select a Filter
+
+  span.sort-by.pull-right
+    | Sort by:
+    a.first-space ng-click="predicate = 'used_at'; reverse==reverse"
+      | Used Date |
+    a ng-click="predicate = 'purchased_at'; reverse==reverse"
+      | Purchase Date |
+    a ng-click="predicate = 'name'; reverse==reverse"
+      | Merchant Name
+  .table-responsive ng-init="predicate='name'"
+    table.table.table-striped.table-hover.table-margin
+      tr ng-repeat="perk in used_array | orderBy:predicate:reverse"
+        th
+          | {{perk.deal.name}}
+        th
+          img src="{{perk.deal.logo}}"
+        th
+          | {{perk.deal.perk}}
+          .info ng-show="perk.deal.usage=='regular'"
+            | Purchased {{perk.purchased_at}}
+          .info ng-show="perk.deal.usage=='subscription'"
+            | Subcribed {{perk.subscribe_start}}
+        th ng-show="perk.deal.usage=='regular'"
+            | Used
+            .info
+              | {{perk.used_at}}
+        th ng-show="perk.deal.usage=='subscription'"
+            | Subscribed ended
+            .info
+              | {{perk.subscribe_end}}
+        th
+          | Status
+          .info
+            | {{perk.status}}
+        th
+          button.btn.btn-primary
+            | View Coupon
+          button.btn.btn-default.add-margin-top
+            | Make a Review

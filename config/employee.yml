@@ -1,0 +1,114 @@
+employee:
+  id: 1
+  first_name: Will
+  last_name: Chua
+  birth_date: 05/30/90
+  street_address_1: Del Rosario Ubanon
+  street_address_2: Barangka
+  city: Quezon
+  state: Metro Manila
+  zip_code: 1136
+  phone_number: (833) 971-2654
+  mobile_number: 09172145978
+  salary_range: 10000-20000
+
+employee:
+  id: 2
+  first_name: Aaron
+  last_name: Tan
+  birth_date: 06/20/89
+  street_address_1: 919 Madison Building 
+  street_address_2: Aurora Blvd. Cubao
+  city: Quezon
+  state: Metro Manila
+  zip_code: 1192
+  phone_number: (855) 121-2093
+  mobile_number: 09213041970
+  salary_range: 20000-30000
+
+employee:
+  id: 3
+  first_name: Jason
+  last_name: Yu
+  birth_date: 01/20/91
+  street_address_1: Unit 8 11th Floor Zuellig Bldg
+  street_address_2: Makati Avenue corner Paseo de Roxas
+  city: Makati
+  state: Metro Manila
+  zip_code: 1129
+  phone_number: (833) 066-8906
+  mobile_number: 09195143074
+  salary_range: 10000-20000
+
+employee:
+  id: 4
+  first_name: Alex
+  last_name: Sison
+  birth_date: 03/11/87
+  street_address_1: 302 Ground Floor
+  street_address_2: Kalayaan Avenue
+  city: Marikina
+  state: Metro Manila
+  zip_code: 1140
+  phone_number: (899) 998-7058
+  mobile_number: 09271811371
+  salary_range: 30000-40000
+
+employee:
+  id: 5
+  first_name: Derek
+  last_name: Lao
+  birth_date: 04/13/89
+  street_address_1: 17th Street Corner 505
+  street_address_2: Taft Avenue
+  city: Pasay
+  state: Metro Manila
+  zip_code: 1160
+  phone_number: (833) 871-9812
+  mobile_number: 09202828974
+  salary_range: 10000
+
+employee:
+  id: 6
+  first_name: Adrian
+  last_name: Dario
+  birth_date: 02/21/86
+  street_address_1: Unit 604 Cattleya Bldg
+  street_address_2: 235 Salcedo Street Legaspi Village
+  city: Makati
+  state: Metro Manila
+  zip_code: 1185
+  phone_number: (811) 432-4350
+  mobile_number: 09372421376
+  salary_range: 0-10000
+
+employee:
+  id: 7
+  first_name: Alvin
+  last_name: Ang
+  birth_date: 11/02/90
+  street_address_1: 180 Dona Soledad Avenue
+  street_address_2: High Rise Building
+  city: Paranaque
+  state: Metro Manila
+  zip_code: 1712
+  phone_number: (844) 271-1783
+  mobile_number: 09232244964
+  salary_range: 10000-20000
+
+employee:
+  id: 8
+  first_name: Miguel
+  last_name: Delrosario
+  birth_date: 09/19/90
+  street_address_1: 16-C Jose Street
+  street_address_2: EDSA Malibay
+  city: Pasay
+  state: Metro Manila
+  zip_code: 1890
+  phone_number: (899) 129-9401
+  mobile_number: 09272841972
+  salary_range: 20000-30000
+	
+	
+	

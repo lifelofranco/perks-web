@@ -1,0 +1,37 @@
+.voucher-wrap
+  .row
+    .col-md-6.remove-padding
+      .voucher-description
+        p.type
+          | {{voucher.type}}
+        h3
+          | {{voucher.perk}}
+        p.description
+          | {{voucher.description}}
+        p.ends-in Ends in
+        .ends-in
+          timer countdown="864000" interval="1000"
+            ul
+              li
+                | {{days}}
+                p Days
+              li
+                | {{hours}}
+                p Hours
+              li
+                | {{minutes}}
+                p Minutes
+              li
+                | {{seconds}}
+                p Seconds
+
+      .used-by
+        p.bought-by
+          | {{voucher.used_by}} others bought this
+          i.fa.fa-heart
+    .col-md-6.remove-padding.child-right
+      ul.ng-cloak rn-carousel="" rn-carousel-control="" rn-carousel-indicator=""
+        li ng-repeat="image in voucher.images"
+          img.perk-image ng-src= "{{image}}"
+
+voucher-tab

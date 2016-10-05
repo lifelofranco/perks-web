@@ -1,0 +1,9 @@
+development:
+  api_key: 60be44719ecf23034e85fbcf5ae47dde
+  api_secret: 6b279fbec3158e8ad1bf6d12fa6c9fc2
+  token: 85a17571a2b0e8713f78f7021be89e33
+
+staging:
+  api_key: 136911dd8d94465857b86c90b5854139
+  api_secret: 0896d239c3d9f3d2d5e584fc6f01be3e
+  token: dda79b72e2cfe5b9caf2f54847a3486d

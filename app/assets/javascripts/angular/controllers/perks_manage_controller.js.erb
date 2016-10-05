@@ -1,0 +1,20 @@
+Muber.controller('PerksManageController',
+  function($scope, ngDialog) {
+    $scope.open = function() {
+      ngDialog.open({
+        template: 'suggest-perk',
+        className: 'ngdialog-theme-default',
+        controller:'suggestPerkController'
+      });
+    };
+
+  });
+
+Muber.controller('suggestPerkController',
+  function($scope,ngDialog, $location){
+    $scope.checkInput = function(){
+      company=$scope.company;
+      console.log(company)
+      ngDialog.close();
+    }
+});

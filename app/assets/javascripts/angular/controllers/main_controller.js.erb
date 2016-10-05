@@ -1,0 +1,17 @@
+Muber.controller('MainController',
+  function($scope, $location, auth){
+    $scope.login = function() {
+      auth.signin({
+        popup: true,
+        showSignup: false,
+        username_style: 'email',
+        icon: "<%= asset_path('muber-perks.png') %>",
+        showIcon: true,
+      })
+      .then(function() {
+        $location.path('/companies/home');
+      }, function() {
+        // Error callback
+      });
+    }
+  });

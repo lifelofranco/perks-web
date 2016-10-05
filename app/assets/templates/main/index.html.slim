@@ -1,0 +1,110 @@
+#request-demo-section
+  .container
+    a.fa.fa-times.close-panel href="#"
+    .col-md-5.col-md-offset-4.col-xs-12 ng-controller="DemoController"
+      .thank-you ng-if="response"
+        h3 translate="index.request_form.thank_you"
+        p translate="index.request_form.thank_you_sub"
+      .employer-form ng-if="!response"
+        .white-background.border-radius-form
+          label.border-right
+            span translate="index.request_form.labels.first_name"
+            input name="firstName" type="text" placeholder="Francis" ng-model="demo_request.first_name"
+          label.border-right
+            span translate="index.request_form.labels.last_name"
+            input name="lastName" type="text" placeholder="Plaza" ng-model="demo_request.last_name"
+          label.full-width
+            span translate="index.request_form.labels.company"
+            input name="company" type="text" placeholder="Muber Inc." ng-model="demo_request.company"
+          label.border-right
+            span translate="index.request_form.labels.email_address"
+            input name="email" type="email" placeholder="francis@muber.com" ng-model="demo_request.email"
+          label
+            span translate="index.request_form.labels.phone_number"
+            input name="telephone" type="tel" placeholder="(650) 213-2642" ng-model="demo_request.phone"
+          button type="submit" class="solid-btn" ng-click="request_demo(demo_request)" translate="index.request_form.labels.request_demo_submit"
+
+header.header-11.main-bar
+  .container
+    .row
+      .white.navbar.col-xs-12 role="navigation"
+        .navbar-header
+          a.brand href="/"
+            = image_tag "muber-perks.png", :class => "perks-logo", :alt => ""
+
+            span.perks translate="shared.perks"
+            a.button-outline.pull-right.visible-sm.visible-xs.absolute href="#" ng-click="login()" translate="shared.login"
+        .collapse.navbar-collapse.pull-right
+          ul.nav-options.nav.pull-left
+            li
+              a href="#" translate="index.navbar.perks_label"
+            li
+              a href="/employer" translate="index.navbar.employers_label"
+            li
+              a href="/employees/dashboard" translate="index.navbar.merchants_label"
+          form.navbar-form.pull-left
+            a.button-outline ng-click="login()" translate="shared.login"
+  .header-background
+
+section.header-11-sub.padding.bg-midnight-blue
+  .background
+  .container
+    .row.add-margin-top
+      .col-md-12.col-xs-12.center-block
+        h3 translate="index.hero.promotional_header"
+        p.short-description translate="index.hero.promotional_sub"
+        #request-demo
+          button href="/employer" translate="index.hero.request_demo"
+
+section
+  .container
+    .features.col-md-4.col-sm-12
+      =image_tag "star.png"
+
+      h3 translate="index.promotional.promo_item_1_header"
+      p translate="index.promotional.promo_item_1_sub"
+    .features.col-md-4.col-sm-12
+      =image_tag "users.png"
+
+      h3 translate="index.promotional.promo_item_2_header"
+      p translate="index.promotional.promo_item_2_sub"
+    .features.col-md-4.col-sm-12
+      =image_tag "customizable.png"
+
+      h3 translate="index.promotional.promo_item_3_header"
+      p translate="index.promotional.promo_item_3_sub"
+
+section.light-gray
+  .container
+    .for-whom
+        .row
+          .col-md-5.col-md-offset-1.col-sm-6.col-xs-12
+            h3 translate="index.for_employers_merchants.for_employers_header"
+            p translate="index.for_employers_merchants.for_employers_body"
+            a.button-outline href="/employer" translate="index.for_employers_merchants.request_demo"
+          .col-md-5.col-md-offset-1.col-sm-5.col-sm-offset-1.col-xs-12
+            =image_tag "employer.png", :class=> "employer-image"
+
+        .row
+          .col-md-5.col-md-offset-1.col-sm-6.col-xs-12
+            =image_tag "building-graph-new.png", :class=> "employer-image"
+
+          .col-md-5.col-md-offset-1.col-sm-6.col-xs-12
+            h3.add-margin translate="index.for_employers_merchants.for_merchants_header"
+            p translate="index.for_employers_merchants.for_merchants_body"
+            a.button-outline href="/employer" translate="index.for_employers_merchants.request_demo"
+
+ng-include src="'#{asset_path("shared/_footer.html")}'"
+
+javascript:
+  $requestDemoSection = $("#request-demo-section");
+
+  $('#request-demo button').click(function(e){
+    e.preventDefault();
+    $requestDemoSection.animate({marginTop: "0px" }, 400);
+  });
+
+  $('.close-panel').click(function(e){
+    e.preventDefault();
+    $requestDemoSection.animate({marginTop: "-" + ($requestDemoSection.outerHeight()) + "px" }, 300);
+  });

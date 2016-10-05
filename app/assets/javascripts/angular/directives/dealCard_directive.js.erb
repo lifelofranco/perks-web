@@ -1,0 +1,11 @@
+angular.module('Muber.directives')
+  .directive('dealCard', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: '<%= asset_path("shared/_dealCard.html") %>',
+      scope: {
+        deals:'='
+      }
+    }
+  });

@@ -1,0 +1,36 @@
+.app-body
+  h4.uppercase
+    | Administrators Info
+    a.btn.btn-primary.btn-wide.pull-right.add-margin-bottom type="submit" class="edit" href="/companies/company/profile" Edit
+  .table-responsive.row-spacing
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th Username
+          th Name
+          th User Type
+          th
+      tr.cursor-pointer
+        th.table-company-settings globe123
+        th.table-company-settings Bryan Conde
+        th.table-company-settings Admin
+        th
+  h4.uppercase.row-spacing Company Info
+  .row.add-margin-top.row-spacing.info
+    .col-md-4.col-sm-6.col-xs-5
+      =image_tag "globe-big.png", :class => "company-image"
+    .col-md-7.col-md-offset-1.col-sm-6.col-xs-7
+      h4.uppercase Gold's Gym
+      p Multiple Locations
+      p
+        | (650) 213 - 2642
+      .social-media
+        .row
+          i.fa.fa-facebook-square.fa-2x
+          a href='#'  https://www.facebook.com/goldsgym
+        .row
+          i.fa.fa-twitter-square.fa-2x
+          a href='#'  @GoldsGymPH
+        .row
+          .i.fa.fa-youtube-play.fa-2x
+          a href='#' http://www.youtube/goldsgym

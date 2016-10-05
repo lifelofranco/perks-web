@@ -1,0 +1,237 @@
+- id: 1
+  name: Meralco
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/meralco.png
+  type: Electronics
+  distance: 3
+  street_address_1: G/F Lopez Bldg Meralco Center 
+  street_address_2: Ortigas Avenue
+  city: Pasig
+  state: Metro Manila
+  zip_code: 1139
+  country: Philippines
+  phone_number: (632) 1622-8884
+  website: www.meralco.com
+
+- id: 2
+  name: Globe
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/globe.png
+  type: Cellphones
+  distance: 4
+  street_address_1: 5/F Globe Telecom Plaza
+  street_address_2: Pioneer corner Madison Streets
+  city: Mandaluyong
+  state: Metro Manila
+  zip_code: 1552
+  country: Philippines
+  phone_number: (833) 144-5513
+  website: www.globe.ph
+  
+- id: 3
+  name: Smart
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/smart.png
+  type: Cellphones
+  distance: 7
+  street_address_1: SMART Tower 6799
+  street_address_2: Ayala Avenue
+  city: Makati
+  state: Metro Manila
+  zip_code: 1239
+  country: Philippines
+  phone_number: (833) 918-1015
+  website: www.meralco.com
+  
+- id: 4
+  name: SM Department Store
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/smdepartment.png
+  type: Apparel
+  distance: 5
+  street_address_1: Julia Vargas Avenue
+  street_address_2: Corner Edsa
+  city: Mandaluyong
+  state: Metro Manila
+  zip_code: 1131
+  country: Philippines
+  phone_number: (899) 524-0075
+  website: www.meralco.com
+    
+- id: 5
+  name: Cebu Pacific
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/cebupacific.png
+  type: Travel
+  distance: 10
+  street_address_1: NAIA
+  street_address_2: Terminal 3
+  city: Mandaluyong 
+  state: Metro Manila
+  zip_code: 1439
+  country: Philippines
+  phone_number: (822) 512-1335
+  website: www.cebupacific.com
+
+- id: 6
+  name: Ayala Malls
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/ayalamalls.png
+  type: Apparel
+  distance: 8
+  street_address_1: Ayala Center Ayala Avenue Corner
+  street_address_2: Pasay Road Makati Avenue
+  city: Makati
+  state: Metro Manila
+  zip_code: 1738
+  country: Philippines
+  phone_number: (844) 598-8416
+  website: www.ayalamalls.com
+  
+- id: 7
+  name: Gold's Gym
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/goldsgym.png
+  type: Fitness
+  distance: 12
+  street_address_1:  4th Flr Regis Plaza
+  street_address_2: Katipunan Avenue
+  city: Quezon 
+  state: Metro Manila
+  zip_code: 1925
+  country: Philippines
+  phone_number: (833) 526-2183
+  website: www.goldsgym.com
+  
+- id: 8
+  name: Buffet 101
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/buffet101.png
+  type: Dining
+  distance: 6
+  street_address_1: 2nd Level Robinsons Magnolia Aurora Blvd.
+  street_address_2: corner Doña M. Hemady St. New Manila
+  city: Quezon 
+  state: Metro Manila
+  zip_code: 1115
+  country: Philippines
+  phone_number: (844) 726-3472
+  website: www.buffet101.com
+  
+- id: 9
+  name: Sambo kojin
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/sambokujin.png
+  type: Dining
+  distance: 15
+  street_address_1: 207 EDSA 
+  street_address_2: Greenhills
+  city: Mandaluyong
+  state: Metro Manila
+  zip_code: 1550
+  country: Philippines
+  phone_number: (822) 345-4510
+  website: www.sambokujin.com
+  
+- id: 10
+  name: Let's Face it
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/faceit.png
+  type: Spa and Massage
+  distance: 17
+  street_address_1: SM City Mall of Asia
+  street_address_2: Seaside Blvd.
+  city: Pasay
+  state: Metro Manila
+  zip_code: 1810
+  country: Philippines
+  phone_number: (844) 124-1007
+  website: www.letsfaceit.com
+  
+- id: 11
+  name: SM Cinemas
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/smcinema.png
+  type: Entertainment
+  distance: 8
+  street_address_1: SM City Mall of Asia
+  street_address_2: Seaside Blvd.
+  city: Pasay
+  state: Metro Manila
+  zip_code: 1778
+  country: Philippines
+  phone_number: (899) 261-2878
+  website: www.smcinemas.com
+  
+- id: 12
+  name: IMAX
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/imax.png
+  type: Entertainment
+  distance: 17
+  street_address_1: IMAX Theatre Edsa Corner
+  street_address_2: North Avenue
+  city: Quezon
+  state: Metro Manila
+  zip_code: 1642
+  country: Philippines
+  phone_number: (811) 135-7498
+  website: www.imax.com
+  
+- id: 13
+  name: Max's Restaurant
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/maxrestaurant.png
+  type: Restaurant
+  distance: 5
+  street_address_1: 998 Roxas Blvd.
+  street_address_2: Remedios Street
+  city: Malate
+  state: Metro Manila
+  zip_code: 1735
+  country: Philippines
+  phone_number: (899) 538-5019
+  website: www.maxrestaurant.com
+  
+- id: 14
+  name: IHOP
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/ihop.png
+  type: Restaurant
+  distance: 1
+  street_address_1: Bonifacio High Street
+  street_address_2: Bonifacio Global City
+  city: Taguig
+  state: Metro Manila
+  zip_code: 1915
+  country: Philippines
+  phone_number: (899) 125-0598
+  website: www.ihop.ph
+
+- id: 15
+  name: Air Asia
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/airasia.png
+  type: Travel
+  distance: 10
+  street_address_1: NAIA
+  street_address_2: Terminal 2
+  city: Mandaluyong
+  state: Metro Manila
+  zip_code: 1165
+  country: Philippines
+  phone_number: (899) 543-8662
+  website: www.airasia.com
+  
+- id: 16
+  name: Nuat Thai
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/nuat-thai.png
+  type: Spa and Massage
+  distance: 7
+  street_address_1: Unit 3 Thaddeus Arcade
+  street_address_2: Gil Fernando Avenue San Roque
+  city: Marikina
+  state: Metro Manila
+  zip_code: 1735
+  country: Philippines
+  phone_number: (839) 452-2161
+  website: www.nuat-thai.com
+  
+- id: 17
+  name: Philippine Airlines
+  image: https://dl.dropboxusercontent.com/u/96073244/Logos/philippineairlines.png
+  type: Travel
+  distance: 22
+  street_address_1: NAIA
+  street_address_2: Terminal 1
+  city: Mandaluyong
+  state: Metro Manila
+  zip_code: 1165
+  country: Philippines
+  phone_number: (719) 422-1621
+  website: www.philippineairlines.com

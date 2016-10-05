@@ -1,0 +1,392 @@
+.inline {
+  display: inline-block;
+}
+
+.header {
+  margin-top: 2vw;
+}
+
+.filters {
+  margin-top: 30px;
+
+  .dropdown {
+    height: 10px;
+    margin-right: 5px;
+  }
+
+  .btn {
+    padding: 7px 7px 7px 10px;
+  }
+
+  .bg-red {
+    background-color: #cf5425;
+  }
+
+  .bg-orange {
+    background-color: #f2a53a;
+  }
+}
+
+.rectangle {
+  border: 2px solid;
+  @include border-radius(5px);
+  margin-top: 3%;
+  overflow: hidden;
+
+  .background-color {
+    background-color: #d6dbe4;
+    position: relative;
+    min-height: 455px;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    list-style-type: none;
+    padding: 10px;
+
+    &:hover {
+      color: #1abc9c;
+      cursor: pointer;
+    }
+  }
+
+  .broken-border {
+    border-right: dotted 4px #d0d0d0;
+  }
+
+  img {
+    width: 25%;
+  }
+
+  .col-md-3 {
+    padding-left: 0;
+    width: 22%;
+
+    p {
+      color: #788991;
+      font-size: 13px;
+      font-style: italic;
+      padding: 10px;
+    }
+  }
+
+  .col-md-9 {
+    padding-right: 0;
+    width: 78%;
+  }
+}
+
+// Popup Perk Info
+
+.perk-info {
+  .head {
+    background: #6ab0cf;
+    @include border-radius(4px 4px 0 0);
+    color: $white;
+    padding: .1em 0;
+    text-align: center;
+
+    p {
+      font-size: 14px !important;
+      font-weight: 300;
+      line-height: .5 !important;
+    }
+
+    h5 {
+      color: $white;
+    }
+  }
+
+  .body {
+    min-height: 140px;
+    position: relative;
+
+    .background-merchant {
+      background: 50% 50% no-repeat;
+      background-image: image-url('meralco-bg.jpg') !important;
+      background-position: center;
+      background-repeat: no-repeat;
+      @include background-size(cover);
+      bottom: 0;
+      left: 0;
+      @include opacity(.2);
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .col-md-3 {
+      margin-top: 15px;
+    }
+  }
+
+  .detail {
+    min-height: 200px;
+
+    p {
+      color: #606060;
+      font-size: 14px !important;
+      font-weight: 300;
+    }
+  }
+
+  .navbar-collapse {
+    border-bottom: solid 1px #e7e7e7;
+    padding-left: 0;
+    padding-right: 0;
+
+    ul {
+      width: 100%;
+    }
+
+    li {
+      width: 25%;
+      text-align: center;
+    }
+
+    a:hover {
+      color: #00bdbe !important;
+    }
+  }
+
+  .list-border {
+    border-right: 1px solid #dadfe1;
+  }
+
+  .button-top-margin {
+    margin-top: 10%;
+  }
+}
+
+.body-padding {
+  color: $white;
+  padding: 1em;
+  z-index: 1000;
+
+  .text-title {
+    margin-left: 10px;
+
+    h5 {
+      color: $white;
+      margin-bottom: 5px;
+    }
+
+    h6 {
+      color: #fff;
+      margin-top: 30px;
+      text-transform: uppercase;
+      border: 1px solid #fff;
+      width: 67%;
+      font-size: 17px;
+      padding: 5px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    h6:hover {
+      background-color: #00bdbe;
+      border: 1px solid #00bdbe;
+      color:#fff;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 0;
+    }
+  }
+  img {
+    background-color: #fff;
+  }
+
+  .btn-red {
+    background-color: #f36;
+  }
+
+  .ratings {
+    i {
+      color: #ffd203;
+    }
+  }
+}
+
+// hover animation on perk
+
+.view {
+  background: #fff no-repeat center center;
+  box-shadow: 1px 1px 2px #e6e6e6;
+  cursor: default;
+  float: left;
+  height: 14.5vw;
+  margin: 10px 9px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 17.5vw;
+
+  h2 {
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    font-family: $base-font;
+    font-size: 14px;
+    margin: 20px 0 0;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 80%;
+  }
+
+  p {
+    color: #fff;
+    font-size: 12px;
+    font-style: italic;
+    padding: 10px 20px 0;
+    position: relative;
+    text-align: center;
+  }
+
+  a.info {
+    background: #000;
+    box-shadow: 0 0 1px #000;
+    color: #fff;
+    display: inline-block;
+    padding: 7px 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top:10px;
+
+    &:hover {
+      box-shadow: 0 0 5px #000;
+    }
+  }
+}
+
+#merchant-categories {
+  a.selected {
+    color: $red;
+  }
+}
+
+.view .masking,
+.view .content {
+  height: 14.5vw;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 17.5vw;
+}
+
+// hover effect
+
+.view-first img {
+  @include transition(all .2s linear);
+}
+
+.view-first .masking {
+  background-color: rgba(219, 127, 8, .7);
+  @include opacity(0);
+  @include transition(all .4s ease-in-out);
+}
+
+.view-first h2 {
+  @include opacity(0);
+  @include transform(translateY(-100px));
+  @include transition(all .2s ease-in-out);
+}
+
+.view-first p {
+  @include opacity(0);
+  @include transform(translateY(100px));
+  @include transition(all .2s linear);
+}
+
+.view-first:hover img {
+  @include transform(scale(1.1, 1.1));
+}
+
+.view-first a.info {
+  @include opacity(0);
+  @include transition(all .2s ease-in-out);
+}
+
+.view-first:hover .masking {
+  @include opacity(1);
+}
+
+.view-first:hover h2,
+.view-first:hover p,
+.view-first:hover a.info {
+  @include opacity(1);
+  @include transform(translateY(0));
+}
+
+.view-first:hover p {
+  @include transition-delay(.1s);
+}
+
+.view-first:hover a.info {
+  @include transition-delay(.2s);
+}
+
+
+//ng switch animation
+
+.animate-switch-container {
+  background: $white;
+  overflow: hidden;
+  position: relative;
+}
+
+.animate-switch {
+  padding: 10px;
+}
+
+// carousel design
+
+.carousel-circle {
+  @include border-radius(100%);
+  width:20px;
+  background-color: transparent;
+  height: 20px;
+  border: 1px solid #f42156;
+  position:relative;
+  cursor: pointer;
+}
+
+.insidecircle {
+  @include border-radius(100%);
+  width: 14px;
+  background-color: #f42156;
+  height: 14px;
+  position: absolute;
+  top: 12%;
+  left: 12%;
+}
+
+.sliders {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 20px;
+
+}
+.carousel-control {
+  width: 7% !important;
+}

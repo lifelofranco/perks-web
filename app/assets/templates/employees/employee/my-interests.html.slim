@@ -1,0 +1,22 @@
+.about-me
+  h4.dashboard-title.inline About Me
+  p I prefer deals for
+  .preferences
+    ul
+      li ng-repeat="prefer in prefers" ng-click="select(prefer)" ng-class="{yellow: prefer==selected}"
+        | {{prefer}}
+
+  p Near these cities
+  select multiple="" ng-model="myCities" ng-options="value as label for (value, label) in cities" chosen=""
+
+  hr
+
+  h4 My Interests
+  .interests
+    div.inline ng-repeat="interest in interests"
+      interest-checkbox text="{{interest}}"
+
+  hr
+  .row-spacing.pull-right
+    button.btn.btn-primary.btn-wide.second-space type="submit" Save
+    button.btn.btn-default type="submit" Cancel

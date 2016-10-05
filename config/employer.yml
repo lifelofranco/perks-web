@@ -1,0 +1,39 @@
+employer:
+  id: 1
+  name: Life Insurance
+  company_type: C corp
+  street_address_1: 
+  street_address_2:
+  city: Quezon 
+  state: Metro Manila
+  zip_code: 1135
+  country: Philippines
+  phone_number: (899) 538-5019
+  website: www.lifeinsurance.com
+
+employer:
+  id: 2
+  name: Lite Telecoms
+  company_type: C corp
+  street_address_1: Ayala Avenue corner 
+  street_address_2: Makati Avenue
+  city: Makati
+  state: Metro Manila
+  zip_code: 1120
+  country: Philippines
+  phone_number: (899) 538-1214
+  website: www.litetelecoms.com
+
+employer:
+  id: 3
+  name: All-in Hardware
+  company_type: C corp
+  street_address_1: 4/f Atrium Building
+  street_address_2: Makati Ave
+  city: Makati
+  state: Metro Manila
+  zip_code: 1129
+  country: Philippines
+  phone_number: (899) 538-5329
+  website: www.all-in-hardware.com.com
+

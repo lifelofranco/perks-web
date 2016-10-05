@@ -1,0 +1,173 @@
+angular.module('Muber.directives')
+  .factory('MbChartFactory', function($http, $q){
+
+    var isoToUtc = function(isoDate) {
+      dateArr = isoDate.split('-');
+      return Date.UTC(+dateArr[0], +dateArr[1] - 1, +dateArr[2]);
+    };
+
+    return {
+
+      getMetric: function(data) {
+        var d = $q.defer();
+        $http({
+          method: 'POST',
+          url: '/api/v1/metrics/get_metrics',
+          data: data
+        }).success(function(data){
+          d.resolve(data);
+        });
+        return d.promise;
+      },
+
+      processSeries: function(data, dates) {
+        var categoryValue = {};
+
+        _.each(data.result, function(el, i, l){
+          var date = isoToUtc(el.date);
+          var value = el.value;
+
+          _.each(value, function(val, key, l){
+            if(!_.isUndefined(categoryValue[key])) {
+              categoryValue[key].push([date, val]);
+            }
+            else {
+              categoryValue[key] = [[date, val]];
+            }
+          });
+        });
+
+        var series = [];
+        _.each(categoryValue, function(value, key, list){
+          series.push({name: key, data: value});
+        });
+        return series;
+      },
+    };
+  })
+  .directive('mbChartLine', function(MbChartFactory){
+    return {
+      restrict: 'EA',
+      replace: true,
+      templateUrl: '<%= asset_path("shared/charts/_chart_line.html") %>',
+      scope: {
+        config: '=',
+        mbChartTitle: '@',
+        metricName: '@',
+        startDate: '@',
+        endDate: '@'
+      },
+      controller: function($scope, $element, $attrs) {
+        $scope.flip = function() {
+          $element.find('.front').toggleClass('flip');
+          $element.find('.back').toggleClass('flip');
+        };
+
+        $scope.ranges = {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+          'Last 7 days': [moment().subtract('days', 7), moment()],
+          'Last 30 days': [moment().subtract('days', 30), moment()],
+          // 'This month': [moment().startOf('month'), moment().endOf('month')]
+        };
+      },
+      link: function(scope, element, attrs) {
+
+        scope.dates = {
+          startDate: moment().subtract(7, 'days'),
+          endDate: moment()
+        }
+
+        scope.data = {
+          metric_name: scope.metricName,
+          args: {
+            company_id: 1,
+            start_date: scope.dates.startDate,
+            end_date: scope.dates.endDate,
+            filter_by: 'category'
+          }
+        };
+
+        scope.formattedStartDate = moment(scope.data.args.start_date).format('MMM DD, YYYY');
+        scope.formattedEndDate = moment(scope.data.args.end_date).format('MMM DD, YYYY');
+
+        var defaultOptions = {
+          chart: {
+            style: {
+              fontFamily: 'Roboto',
+              fontWeight: '400',
+              color: '#40434f'
+            },
+            events: {},
+            renderTo: element.find('.chart')[0],
+          },
+          title: {
+            text: '',
+          },
+          xAxis: {
+            type: 'datetime',
+            minTickInterval: 1000 * 60 * 60 * 24,
+            labels: {
+              formatter: function() {
+                return moment.utc(this.value).format('MMM DD');
+              }
+            }
+          },
+          yAxis: {
+            min: 0,
+            gridLineDashStyle: 'dot',
+            title: {
+              text: null
+            }
+          },
+          series: [],
+          credits: false,
+          plotOptions: {
+            series: {
+              marker: {
+                radius: 3,
+                symbol: 'circle',
+                fillColor: null,
+                border: 0,
+                states: {
+                  hover: {
+                    enabled: true,
+                    lineWidth: 2
+                  }
+                }
+              }
+            }
+          },
+          tooltip: {
+            backgroundColor: "rgba(255,255,255,1)",
+            formatter: function() {
+              return moment.utc(this.x).format('MMM DD, YYYY') + '<br>' + this.series.name + ': ' + this.y;
+            }
+          },
+          navigator: {
+            enabled: false
+          }
+        };
+
+        scope.$watchCollection('dates', function(n, o){
+          scope.data.args.start_date = n.startDate;
+          scope.data.args.end_date = n.endDate;
+
+          MbChartFactory.getMetric(scope.data).
+            then(function(data){
+              scope.options = $.extend(true, {}, scope.config.options, defaultOptions);
+              scope.options.series = MbChartFactory.processSeries(data, scope.dates);
+
+              if (scope.chart instanceof Highcharts.Chart) {
+                scope.chart.destroy();
+              }
+
+              scope.chart = new Highcharts.Chart(scope.options, undefined);
+              scope.formattedStartDate = moment(scope.data.args.start_date).format('MMM DD, YYYY');
+              scope.formattedEndDate = moment(scope.data.args.end_date).format('MMM DD, YYYY');
+            });
+        });
+
+      }
+    };
+  });

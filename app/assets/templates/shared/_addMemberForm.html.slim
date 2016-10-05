@@ -1,0 +1,93 @@
+#member-form data-ng-repeat="member in members"
+  h5 Employee {{ $index + 1 }}
+  form name= "teamForm" ng-submit="submitForm();" novalidate=""
+    .row
+      .no-padding.col-md-3
+        label for="employeeId" Employee Id
+        input.form-control type="text" ng-model="member.employeeId" name= "employeeId"
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="firstName" First Name
+        input.form-control type="text" ng-model="member.firstName" name= "firstName" required= "" placeholder= "Francis" ng-pattern="/^[a-zA-Z ]+$/"
+        span.validation
+          div ng-show="submitted && teamForm.firstName.$error"
+            div ng-show="teamForm.firstName.$error.required"
+              i.fa.fa-exclamation-circle  First name is required
+            div ng-show="teamForm.firstName.$error.pattern"
+              i.fa.fa-exclamation-circle  Please enter a valid first name
+      .col-md-3
+        label for="lastName" Last Name
+        input.form-control type="text" ng-model="member.lastName" name="lastName" required="" placeholder= "Plaza" ng-pattern="/^[a-zA-Z ]+$/"
+        span.validation
+          div ng-show="submitted && teamForm.lastName.$error"
+            div ng-show="teamForm.lastName.$error.required"
+              i.fa.fa-exclamation-circle  Last name is required
+            div ng-show="teamForm.lastName.$error.pattern"
+              i.fa.fa-exclamation-circle  Please enter a valid last name
+      .no-padding.col-md-2
+        label.block for="gender" Gender
+        select.gender ng-model="member.gender" name="gender" required=""
+          option ng-disabled="true" selected= "true" value="" Gender
+          option value= "male" Male
+          option value= "female" Female
+        span.validation
+          div ng-show="submitted && teamForm.gender.$error.required"
+            i.fa.fa-exclamation-circle  Gender is required
+      .no-padding.col-md-4
+        label.block for="birthday" Birthday
+        div ng-model= "member.birthday"
+          select.month ng-model="member.month" ng-options="month.name for month in months track by month.value" name="birthday" required=""
+            option ng-disabled="true" selected= "true" value="" Month
+          select.day.inline ng-model="member.day" ng-options="day.day for day in days track by day.value" name="birthday" required=""
+            option ng-disabled="true" required= "" value=""  Day
+          select.year.inline ng-model="member.year" ng-options="year.year for year in years track by year.value" name="birthday" required=""
+            option.inline ng-disabled="true" value=""  Year
+        span.validation
+          div ng-show="submitted && teamForm.birthday.$error.required"
+            i.fa.fa-exclamation-circle  Birthday is required
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="address" Address
+        input.form-control placeholder="Line 1" type="text" ng-model="member.line1" name= "line1" required= ""
+        span.validation
+          div ng-show="submitted && teamForm.line1.$error.required"
+            i.fa.fa-exclamation-circle  An address is required
+      .col-md-3
+        input.form-control.line2 placeholder="Line 2" type="text" ng-model="member.line2"
+      .no-padding.col-md-3
+        label for="zipcode" Zipcode
+        input.form-control type="text" ng-model="member.zipcode" name="zipcode" required= "" placeholder= "XXXX"
+        span.validation
+          div ng-show="submitted && teamForm.zipcode.$error.required"
+            i.fa.fa-exclamation-circle  Zipcode is required
+      .col-md-3
+        label for="mobileNumber" Mobile Number
+        input.form-control type="text" ng-model="member.mobileNumber" name= "mobileNumber" required= "" placeholder= "091XXXXXXXX" ng-pattern="/^\d{11}?$/"
+        span.validation
+          div ng-show="submitted && teamForm.mobileNumber.$error"
+            div ng-show="teamForm.mobileNumber.$error.required"
+              i.fa.fa-exclamation-circle  Mobile number is required
+            div ng-show="teamForm.mobileNumber.$error.pattern"
+              i.fa.fa-exclamation-circle  Number must be 11 digits in length
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="emailAddress" Email Address
+        input.form-control type="email" ng-model="member.emailAddress" name= "emailAddress" required= "" placeholder= "francisplaza@gmail.com"
+        span.validation
+          div ng-show="submitted && teamForm.emailAddress.$error.required"
+            i.fa.fa-exclamation-circle  Please enter a valid email Address
+      .col-md-3
+        label for="salaryRange" Salary Range
+        select.add-width ng-model="member.salaryRange" name="salaryRange" required=""
+          option ng-disabled="true" selected= "true" value="" Salary Range
+          option value= "10000-20000" ₱ 10,000 - 20,000
+          option value= "20000-30000" ₱ 20,000 - 30,000
+          option value= "30000-40000" ₱ 30,000 - 40,000
+          option value= "40000-50000" ₱ 40,000 - 50,000
+          option value= "50000-75000" ₱ 50,000 - 75,000
+          option value= "75000-100000" ₱ 75,000 - 100,000
+        span.validation
+          div ng-show="submitted && teamForm.salaryRange.$error.required"
+            i.fa.fa-exclamation-circle  Salary range is required
+      .col-md-2
+        button.outline-button.padding ng-show="$last" ng-click="addNewMember()" type="submit"  Add more

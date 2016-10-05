@@ -1,0 +1,46 @@
+.my-perks
+  h4.dashboard-title.inline
+    | My Perks
+  select.inline ng-change="selectFilter('myPerks')" ng-model="filter" ng-options="value.id as value.label for value in myPerkFilterOptions"
+    option value=""
+      | Select a Filter
+
+  span.sort-by.pull-right
+    | Sort by:
+    a.first-space ng-click="predicate = 'expires_on'; reverse==reverse"
+      | Expiration Date |
+    a ng-click="predicate = 'purchased_at'; reverse==reverse"
+      | Purchase Date |
+    a ng-click="predicate = 'name'; reverse==reverse"
+      | Merchant Name
+  .table-responsive ng-init="predicate='name'"
+    table.table.table-striped.table-hover.table-margin
+      tr ng-repeat="perk in all_subscribed_unused | orderBy:predicate:reverse"
+        th
+          | {{perk.deal.name}}
+        th
+          img src="{{perk.deal.logo}}"
+        th
+          | {{perk.deal.perk}}
+          .info ng-show="perk.deal.usage=='regular'"
+            | Purchased {{perk.purchased_at}}
+          .info ng-show="perk.deal.usage=='subscription'"
+            | Subcribed {{perk.subscribe_start}}
+        th ng-show="perk.deal.usage=='regular'"
+            | Expires On
+            .info
+              | {{perk.expires_on}}
+        th ng-show="perk.deal.usage=='subscription'"
+            | Frequency
+            .info
+              | {{perk.deal.frequency}}
+
+        th
+          | Status
+          .info
+            | {{perk.status}}
+        th
+          button.btn.btn-primary
+            | View Coupon
+          button.btn.btn-default.add-margin-top
+            | Make a Review

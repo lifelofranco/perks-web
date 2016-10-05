@@ -1,0 +1,8 @@
+.sub-navbar
+  h3
+    | {{title}}
+.btn-padding
+  a.add-employee-options ng-repeat="option in navbarOptions" ui-sref-active="activenav" ui-sref=".{{option.link}}"
+    | {{option.label}}
+
+div ui-view="subcontent"

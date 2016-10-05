@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deal_id: 1
+  used_at: 2014-06-26 15:50:22
+  redeemed_at: 2014-06-26 15:50:22
+
+two:
+  deal_id: 1
+  used_at: 2014-06-26 15:50:22
+  redeemed_at: 2014-06-26 15:50:22

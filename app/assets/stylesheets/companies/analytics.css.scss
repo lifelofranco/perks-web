@@ -1,0 +1,144 @@
+// flip-analytics
+
+.flip-container {
+  @include transform(perspective(2000px));
+  @include transform-style(preserve-3d);
+  @include perspective(2000);
+}
+
+.front {
+  @include transform(rotateY(0deg));
+  @include transform(translate3d(0, 0, 0));
+  z-index: 2;
+}
+
+
+.flip-container,
+.front,
+.back {
+  min-height: 490px;
+  width: 37vw;
+}
+
+.flipper {
+  @include transform-style(preserve-3d);
+  @include transform(perspective(2000px));
+  position: relative;
+}
+
+.front,
+.back {
+  @include backface-visibility(hidden);
+  @include transform-style(preserve-3d);
+  @include transition(.6s);
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.back {
+  @include transform(rotateY(-180deg));
+}
+
+.flip.back {
+  @include transform(rotateY(0deg));
+}
+
+.flip.front {
+  @include transform(rotateY(180deg));
+}
+
+.back-padding {
+  padding: 20px;
+}
+
+.done-header {
+  background-color: #5da6cb;
+  @include border-radius(5px 5px 0 0);
+  padding: 10px;
+  text-align: right;
+}
+
+.done-button {
+  background: #fff;
+  @include border-radius(17px);
+  padding: 4px 20px;
+  text-transform: uppercase;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #d3161c;
+    outline: none !important;
+    box-shadow: none;
+  }
+}
+
+.options-graph {
+  float: right;
+  margin: 12px 7px 7px;
+
+  .encircle-icon {
+    @include border-radius(100%);
+    border: 1px solid #79848a;
+    color: #79848a;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 4px 6px;
+    text-align: center;
+  }
+
+  .encircle-icon:hover {
+    background-color: #79848a;
+    color: #fff;
+  }
+}
+
+.date-range {
+  position: relative;
+
+  input {
+    padding-left: 38px;
+    width: initial;
+
+  }
+
+  span {
+    border-right: 1px solid;
+    font-size: 16px;
+    padding: 8px 7px 6px;
+    position: absolute;
+  }
+}
+
+.graph-widget {
+  list-style-type: none;
+  min-height: 600px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  li {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 50%;
+  }
+
+  .title {
+    text-transform: uppercase;
+    margin-bottom: 0 !important;
+    margin-top: 15px !important;
+    padding: 0 20px !important;
+  }
+
+}
+
+.date-range-label {
+  font-size: 13px;
+  margin-bottom: 15px;
+  padding: 0 20px;
+}
+
+.chart {
+  padding: 10px;
+}

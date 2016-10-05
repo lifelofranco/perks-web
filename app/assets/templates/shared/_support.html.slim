@@ -1,0 +1,33 @@
+.sub-navbar
+  h3 Send us a Message
+.app-body
+  .row.support
+    .col-md-4.col-sm-12
+      label
+        | Full Name
+        input.form-control type="text"
+      label
+        | Email
+        input.form-control type="email"
+      label
+        | Subject
+        input.form-control type="text"
+      label
+        | Message
+        textarea.form-control rows="6" name="message"
+    .col-md-offset-1.col-md-6.col-sm-10
+      .row
+        .col-md-6
+          h5 Phone
+          p 650 213 2642
+        .col-md-6
+          h5 Email
+          p francis@muber.com
+      h5
+        |Visit Us (77 12th ST NE Atlanta, GA)
+      =image_tag "map.png"
+
+
+  .addmore.add-margin-top
+    button.btn.btn-primary.btn-wide.second-space type="submit"  Submit
+    button.btn.btn-default Cancel

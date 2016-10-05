@@ -1,0 +1,45 @@
+// mixins should appear here
+@mixin spacing-reset {
+  margin: 0;
+  padding: 0;
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+$break-monitor: 1200px;
+$break-laptop: 992px;
+$break-tablet: 768px;
+$break-mobile: 480px;
+$break-nano: 320px;
+
+@mixin breakpoint($width) {
+  @if $width == monitor {
+    @media (min-width: $break-monitor) { @content; }
+  }
+  @else if $width == laptop {
+    @media (min-width: $break-laptop) { @content; }
+  }
+  @else if $width == tablet {
+    @media (min-width: $break-tablet) { @content; }
+  }
+  @else if $width == mobile {
+    @media (min-width: $break-mobile) { @content; }
+  }
+  @else if $width == nano {
+    @media (min-width: $break-nano)  { @content; }
+  }
+}
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}

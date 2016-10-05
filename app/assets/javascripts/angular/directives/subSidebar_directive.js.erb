@@ -1,0 +1,65 @@
+angular.module('Muber.directives')
+  .directive('subSidebar', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude:true,
+      template: '<li ng-repeat="category in categories" ng-class="{highlighted: category.type==selected}" ng-click="select(category.type)"> <span class="ss-icon ss-symbolset-line {{category.icon}}"></span> {{category.type}}</li>',
+      controller: function($scope, DemoService) {
+        $scope.categories = [{"type":"All",
+                              "icon":"ss-star"
+                            },{
+                              "type":"Home",
+                              "icon":"ss-home"
+                            }, {
+                              "type":"Telecom",
+                              "icon":"ss-cell"
+                            }, {
+                              "type":"Dining",
+                              "icon":"ss-utensils"
+                            }, {
+                              "type":"Travel",
+                              "icon":"ss-plane"
+                            }, {
+                              "type":"Learning",
+                              "icon":"ss-graduationcap"
+                            }, {
+                              "type":"Fitness",
+                              "icon":"ss-runner"
+                            }, {
+                              "type":"Spa & Massage",
+                              "icon":"ss-wheelchair"
+                            }, {
+                              "type":"Electronics",
+                              "icon":"ss-laptop"
+                            }, {
+                              "type":"Apparel",
+                              "icon":"ss-tshirt"
+                            }, {
+                              "type":"Childcare",
+                              "icon":"ss-baby"
+                            }, {
+                              "type":"Dating",
+                              "icon":"ss-heart"
+                            }, {
+                              "type":"Pets",
+                              "icon":"ss-dogface"
+                            }];
+
+        $scope.merchants = DemoService.merchants();
+        $scope.selected = 'All';
+
+        $scope.select = function(category) {
+          $scope.selected = category;
+          if(category==='All') {
+            $scope.merchants = DemoService.merchants();
+          }
+          else {
+            $scope.merchants = _.filter(DemoService.merchants(),
+                              function(m){ return m.type ===category;})
+          }
+        }
+
+      }
+    }
+  });

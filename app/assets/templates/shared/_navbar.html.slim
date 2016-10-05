@@ -1,0 +1,38 @@
+#dashboard
+  .first-bar
+    .navbar-header
+      button.navbar-toggle type="button"
+      a ui-sref="employees.exclusives"
+        = image_tag "globe-big.png", :width => "100", :height => "100", :alt => ""
+    .search-form
+      .form-group.pull-left
+        input.form-control.relative placeholder="search" type="search" ng-model="search"
+        span.input-icon.ss-icon.ss-symbolicons-line.ss-search
+    .collapse.navbar-collapse.pull-right
+      ul.nav.navbar-nav.pull-left
+        li
+          = image_tag "bryan.png", :class => "employee-profile-picture"
+        li.dropdown
+          dropdown-toggle data-toggle="dropdown"
+            | Hi, Bryan
+            b.caret
+          span.dropdown-arrow
+          ul.dropdown-menu
+            li
+              a ui-sref="dashboard.perks" Perk Dashboard
+            li
+              a href="#" Your Profile
+            li
+              a ui-sref="dashboard.account" Account Settings
+            li.divider
+            li
+              a href="#" Sign Out
+        li.cart
+          a.no-padding href= "#"
+            span.ss-icon.ss-symbolicons-line.ss-cart
+            label 2 items
+  ul.sub-navbar
+    li ng-repeat="list in lists" class="color-{{$index+1}}"
+      a ui-sref="employees.{{list.link}}" ng-click="clicked(list.text)"
+        span class="ss-icon ss-symbolicons-block {{list.icon}}"
+        |  {{list.text}}

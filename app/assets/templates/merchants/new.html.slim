@@ -1,0 +1,33 @@
+.container
+  h1 Create New Merchant
+  label for="name" Name
+  input name="name" type="text" ng-model="merchant.name"
+  br
+  label for="description" Description
+  textarea name="description" ng-model="merchant.description"
+  br
+  label for="street_address_1" Street Address 1
+  input name="street_address_1" ng-model="merchant.street_address_1"
+  br
+  label for="street_address_2" Street Address 2
+  input name="street_address_2" ng-model="merchant.street_address_2"
+  br
+  label for="city" City
+  input name="city" ng-model="merchant.city"
+  br
+  label for="state" State
+  input name="state" ng-model="merchant.state"
+  br
+  label for="zip" Zip Code
+  input name="zip" ng-model="merchant.zip_code"
+  br
+  label for="country" Country
+  input name="country" ng-model="merchant.country"
+  br
+  label for="phone_number" Phone Number
+  input name="phone_number" ng-model="merchant.phone_number"
+  br
+  label for="website" Website
+  input name="website" ng-model="merchant.website"
+  br
+  input type="submit" ng-click="submit_data()"

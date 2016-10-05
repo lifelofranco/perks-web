@@ -1,0 +1,173 @@
+script type="text/ng-template" id="perk-info"
+  .perk-info
+    .head
+      h5 Details
+      p
+        | {{merchant.name}}, All branches
+    .body.bg-midnight-blue
+      .background-merchant &nbsp;
+      .body-padding.row
+        .col-md-8
+          .text-title
+            h5
+              | {{merchant.name}}
+            p
+              | {{merchant.perk}}
+            span.ratings ng-repeat="r in rating"
+              i.fa.fa-star
+            .button-top-margin ng-switch="" on="ifPresent"
+              input.btn.btn-primary type="button" value="Add Perk" ng-switch-when="false" ng-click="addMerchant(merchant)"
+              input.btn.btn-red type="button" value="Remove Perk" ng-switch-when="true" ng-click="removeMerchant(merchant)"
+        .col-md-3
+          img ng-src= "{{merchant.logo}}"
+    nav.navbar-default role="navigation"
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li.list-border
+            a href="" ng-model="selection" ng-click="changeSelection('Description')"
+              | About
+
+          li.list-border
+            a href="" ng-model="selection" ng-click="changeSelection('Fine Print')"
+              | Fine Print
+          li.list-border
+            a href="" ng-model="selection" ng-click="changeSelection('Location')"
+              | Locations
+          li
+            a href="" ng-model="selection" ng-click="changeSelection('Reviews')"
+              | Reviews
+    .detail
+      .animate-switch-container ng-switch="" on="selection"
+        .animate-switch ng-switch-when="Description"
+          p
+            | {{merchant.description}}
+        .animate-switch ng-switch-when="Fine Print"
+          p
+            | {{merchant.phone_number}}
+        .animate-switch ng-switch-when="Location"
+          p
+            | {{merchant.street_address_1}}
+        .animate-switch ng-switch-when="Reviews"
+          p
+            | {{merchant.website}}
+
+
+
+.sub-navbar
+  h3 Add Perks
+.app-body
+  h3 Available Perks: 10
+  h5.header Add/Remove Perk
+  .filters
+    .dropdown.inline
+      button.btn.btn-primary data-toggle="dropdown"
+        i.fa.fa-map-marker
+        |   Within 5km
+        span.caret.add-space
+      span.dropdown-arrow
+      ul.dropdown-menu
+        li
+          a href="#fakelink"  Sub Menu Element
+        li
+          a href="#fakelink"  Sub Menu Element
+        li
+          a href="#fakelink"  Sub Menu Element
+    .dropdown.inline
+      button.btn.btn-primary.bg-red data-toggle="dropdown"
+        i.fa.fa-money
+        |  Price Range
+        span.caret.add-space
+      span.dropdown-arrow
+      ul.dropdown-menu
+        li
+          a href="#fakelink"  Sub Menu Element
+        li
+          a href="#fakelink"  Sub Menu Element
+        li
+          a href="#fakelink"  Sub Menu Element
+    .dropdown.inline
+      button.btn.btn-primary.bg-orange data-toggle="dropdown"
+        i.fa.fa-thumbs-o-up
+        |  Ratings
+        span.caret.add-space
+      span.dropdown-arrow
+      ul.dropdown-menu
+        li
+          a href="#fakelink"  Sub Menu Element
+        li
+          a href="#fakelink"  Sub Menu Element
+        li
+          a href="#fakelink"  Sub Menu Element
+
+  .rectangle
+    .row
+      .col-md-9
+        .broken-border
+          .background-color
+            .inline ng-repeat= "merchant in merchants"
+              .view.view-first
+                img ng-src= "{{merchant.logo}}"
+                .masking
+                  h2
+                    | {{merchant.perk}}
+                  p
+                    i.fa.fa-map-marker.second-space
+                    | All branches
+                  a.info.second-space href="#" ng-click="openPopover(merchant)" More Info
+                  a.info href="#" ng-click="addMerchant(merchant)" +
+
+            .sliders
+              .inline.carousel-circle ng-repeat= "slider in sliders" ng-click="moveTo(slider)"
+                div ng-class= "{insidecircle: currentIndex === $index}"
+            div ng-show="sliders.length > 1"
+              a.left.carousel-control role="button" ng-click="prev('unaddedControllers')"
+                span.glyphicon.glyphicon-chevron-left
+              a.right.carousel-control role="button"ng-click="next('unaddedControllers')"
+                span.glyphicon.glyphicon-chevron-right
+
+
+
+      .col-md-3
+        ul#merchant-categories
+          li
+            a data-ng-click="selectCategory('all')" ng-class="{selected: 'all' === selectedCategory}" All Perks ({{unAddedMerchants.length}})
+          li ng-repeat= "(key, value) in merchantCategories"
+            a data-ng-click="selectCategory(key)" ng-class="{selected: key === selectedCategory}"
+              | {{key}} ({{value}})
+
+
+
+  h4.row-spacing.add-margin-top Your Subscribed Perks
+  .rectangle-box ng-show="!addedMerchants.length"
+    .circle
+      i.fa.fa-ticket
+    h4 You have no added Perks yet
+
+  .rectangle ng-show="addedMerchantsPool.length"
+    .row
+      .col-md-12
+        .background-color
+          .inline ng-repeat= "merchant in addedMerchantsPool"
+            .view.view-first
+              img ng-src= "{{merchant.logo}}"
+              .masking
+                h2
+                  | {{merchant.perk}}
+                p
+                  i.fa.fa-map-marker.second-space
+                  | All branches
+                a.info.second-space href="#" ng-click="openPopover(merchant)" More Info
+                a.info href="#" ng-click="removeMerchant(merchant)" -
+
+          .sliders
+            .inline.carousel-circle ng-repeat= "secondslider in secondSliders" ng-click="secondMoveTo(secondslider)"
+              div ng-class= "{insidecircle: secondIndex === $index}"
+          div ng-show="secondsliders.length > 1"
+            a.left.carousel-control role="button" ng-click="prev()"
+              span.glyphicon.glyphicon-chevron-left
+            a.right.carousel-control role="button"ng-click="next()"
+              span.glyphicon.glyphicon-chevron-right
+
+  .add-margin-top
+    button.btn.btn-primary.btn-wide.second-space type="submit"  Save
+    button.btn.btn-default Cancel

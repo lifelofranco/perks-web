@@ -1,0 +1,23 @@
+.deal-card ng-repeat= "merchant in deals"
+  .deal-pic.first-view
+    img.deal-image ng-src= "{{merchant.cover}}"
+    .mask-view
+      h3.clamped
+        | {{merchant.perk}}
+      a.btn.button-yellow ui-sref="employees.fitness.voucher"
+        i.fa.fa-star
+        | GET PERK
+
+  .card-bottom
+    .inline
+      h5.ellipsis
+        | {{merchant.name}}
+      p.ellipsis
+        span.list ng-repeat="branch in merchant.branches"
+          | {{branch.area}}
+    span.discount
+     | {{merchant.discount}}
+  .used-by
+    p
+      | {{merchant.used_by}} others bought this
+      i.fa.fa-heart

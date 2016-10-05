@@ -1,0 +1,243 @@
+
+
+.all-card-deals {
+  width:100%;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clamped {
+    line-height: 1.5;
+    overflow: hidden;
+    position: relative;
+}
+
+.staff-picks {
+  padding: 30px 10px;
+  background: #f4f4f4;
+
+    h3 {
+      font-size: 14px;
+      background-color: #ff9c58;
+      color: #fff;
+      padding: 4px;
+      font-weight: 400;
+      max-height: 3.5em;
+    }
+
+    h4 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 0;
+      color: #585f78;
+    }
+
+    .card-bottom {
+      padding: 10px 5px;
+
+
+      .inline {
+        width: 155px;
+      }
+
+      .list:after{
+        content: ", ";
+      }
+      .list:last-child:after {
+        content:"";
+      }
+    }
+
+    .discount {
+      float: right;
+      font-size: 16px;
+      font-family: montserrat;
+      color: #e67e22;
+      margin-top: 3px;
+    }
+
+    h5 {
+      font-size:11px;
+      font-family: $header-font;
+      color: #60687e;
+      margin:0;
+    }
+
+    p {
+      font-size: 9px;
+      color: #60687e;
+      margin: 0;
+      line-height: 2;
+    }
+
+    .deal-image {
+      height: 150px;
+      width: 100%;
+    }
+
+    .deal-pic {
+      text-align: center;
+    }
+    .deal-card {
+      width: 230px;
+      margin-left: 15px;
+      margin-bottom: 35px;
+      position: relative;
+      @include box-shadow(0 1px 5px -2px rgba(0,0,0,0.52));
+      @include border-top-left-radius(0);
+      @include border-top-right-radius(0);
+      @include border-bottom-right-radius(4px);
+      @include border-bottom-left-radius(4px);
+      background: #fff;
+      display: inline-block;
+    }
+}
+
+.used-by {
+  text-align:right;
+  border-top: 1px dashed #e6e8ec;
+  padding: 8px 5px;
+
+  p {
+    padding-right: 25px;
+    position:relative;
+    color: #bfc2cb;
+    cursor: pointer;
+  }
+
+  p:hover{
+    color: #fe797c;
+  }
+  i {
+    font-size: 19px;
+    margin-left: 5px;
+    position: absolute;
+  }
+}
+
+
+.button-yellow {
+  color: #fff;
+  background-color: #f1c40f;
+  @include border-radius(3px !important);
+  font-family: Montserrat;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.button-yellow:hover {
+  background-color:lighten(#f1c40f, 7%);
+  color: #fff;
+}
+
+
+
+// hover-effect
+
+.deal-pic .mask-view,
+.deal-pic .content {
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 62.5%;
+  text-align: center;
+}
+
+.first-view img {
+  @include transition(all .1s linear);
+}
+
+.first-view .mask-view {
+  background-color: rgba(73, 239, 207, 0.8);
+  @include opacity(0);
+  @include transition(all .3s ease-in-out);
+}
+
+.first-view h3,
+.first-view a {
+  @include opacity(0);
+  @include transition(all .1s ease-in-out);
+}
+
+.first-view:hover .mask-view {
+  @include opacity(1);
+}
+
+.first-view a {
+  margin-top: 20px;
+}
+
+.first-view:hover h3,
+.first-view:hover a {
+  @include opacity(1);
+  @include transform(translateY(0));
+}
+
+.first-view:hover h3,
+.first-view:hover a {
+  @include transition-delay(.1s);
+}
+
+// category
+
+.categories {
+  ul {
+    list-style: none;
+    padding: 0;
+    background: #fff;
+    border-radius: 3px;
+  }
+
+  li {
+    position: relative;
+    padding: 10px;
+    font-family: $header-font;
+    cursor: pointer;
+    color: #40434f;
+  }
+  li:hover {
+    color: #70c4ba;
+    font-size: 13px;
+  }
+  span {
+    margin-right: 17px;
+    position: relative;
+    top: 2px;
+  }
+
+  .highlighted {
+    background-color: #00bdbe;
+    color: #fff;
+    &:hover {
+      color:#fff !important;
+    }
+  }
+  .search {
+    border: none;
+    outline: none;
+    width: 100%;
+    line-height: 23px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 44px;
+    padding-right: 10px;
+  }
+
+  .input-icon {
+    position: absolute;
+    top: 15px;
+    left: 12px;
+  }
+}

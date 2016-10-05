@@ -1,0 +1,27 @@
+ng-include src="'#{asset_path("shared/_homeNavbar.html")}'"
+section.header-11-sub.background-gray
+  .container
+    .employer-form ng-controller="DemoController"
+      .alert.alert-info.alert-dismissable ng-if="response"
+        | Thanks! We have received your request.
+      .background-image
+        .white-background
+          label.border-right
+            span First Name
+            input name="firstName" type="text" placeholder="Francis" ng-model="demo_request.first_name"
+          label
+            span Last Name
+            input name="lastName" type="text" placeholder="Plaza" ng-model="demo_request.last_name"
+          label.full-width
+            span Company
+            input name="company" type="text" placeholder="Muber Inc." ng-model="demo_request.company"
+          label.full-width
+            span Email Address
+            input name="email" type="email" placeholder="francis@muber.com" ng-model="demo_request.email"
+          label.full-width
+            span Phone Number
+            input name="telephone" type="tel" placeholder="(650) 213-2642" ng-model="demo_request.phone"
+          button type="submit" class="solid-btn" ng-click="request_demo(demo_request)"
+            |Request Demo
+
+ng-include src="'#{asset_path("shared/_footer.html")}'"

@@ -1,0 +1,13 @@
+company_perks_metric:
+  required:
+    - start_date
+    - end_date
+    - company_id
+  optional:
+    - filter_by
+
+total_used_perk_value_by_type:
+  required:
+    - start_date
+    - end_date
+    - company_id

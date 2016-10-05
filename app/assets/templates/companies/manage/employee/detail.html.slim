@@ -1,0 +1,86 @@
+.app-body ng-switch="" on="selection"
+  h4 Basic Information
+  div ng-switch-when="save"
+    .row-spacing.row
+      .no-padding.col-md-3 ng-switch="" on="selection"
+        label for="employeeId" Employee Id
+        input.form-control type="text" value="092199"
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="firstName" First Name
+        input.form-control type="text" value="Bryan"
+      .col-md-3
+        label for="lastName" Last Name
+        input.form-control type="text" value="Conde"
+      .no-padding.col-md-3
+        label for="gender" Gender
+        select.form-control
+          option value="0" Male
+          option value="1" Female
+          span.caret
+      .col-md-3
+        label for="birthday" Birthday
+        input.form-control type="text" value="05/06/1993"
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="address" Address
+        input.form-control placeholder="Line 1" type="text" value="Loyola Heights"
+      .col-md-3
+        input.form-control.line2 placeholder="Line 2" type="text" value="Unit 1716"
+      .no-padding.col-md-3
+        label for="zipcode" Zipcode
+        input.form-control type="text" value="1803"
+      .col-md-3
+        label for="mobileNumber" Mobile Number
+        input.form-control type="text" value="09159169999"
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="emailAddress" Email Address
+        input.form-control type="text" value="bryan.conde@globe.ph"
+      .col-md-3
+        label for="salaryRange" Salary Range
+        select.form-control
+          option value="0" P20000-P30000
+          option value="1" P30001-P40000
+          option value="2" P40001-P50000
+          span.caret
+    //
+  .edit-panel ng-switch-when="edit"
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="employeeId" Employee Id
+        p 092199
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="firstName" First Name
+        p Bryan
+      .col-md-3
+        label for="lastName" Last Name
+        p Conde
+      .no-padding.col-md-3
+        label for="gender" Gender
+        p Male
+      .col-md-3
+        label for="birthday" Birthday
+        p May 06 1993
+    .row-spacing.row
+      .no-padding.col-md-6
+        label for="address" Address
+        p 77 12th ST NE Atlanta GA
+      .no-padding.col-md-3
+        label for="zipcode" Zipcode
+        p 30309
+      .col-md-3
+        label for="mobileNumber" Mobile Number
+        p 09159999999
+    .row-spacing.row
+      .no-padding.col-md-3
+        label for="emailAddress" Email Address
+        p bryan.conde@globe.ph
+      .col-md-3
+        label for="salaryRange" Salary Range
+        p P40000-50000
+  .addmore.add-margin-top.row-spacing
+    button.btn.btn-primary.btn-wide type="submit"  ng-model="selection" ng-click="changedSelection('edit')" ng-switch-when="save" Update and Save
+    button.btn.btn-primary.btn-wide type="submit"  ng-model="selection" ng-click="changedSelection('save')" ng-switch-when="edit" Edit
+    button.btn.btn-default Cancel

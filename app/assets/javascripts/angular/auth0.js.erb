@@ -1,0 +1,12 @@
+Muber.config(function(authProvider) {
+  authProvider.init({
+    clientID: "<%= AUTH0_CONFIG['client_id'] %>",
+    callbackURL: "<%= AUTH0_CONFIG['callback_url'] %>",
+    domain: "<%= AUTH0_CONFIG['domain'] %>",
+    loginState: 'login'
+  })
+});
+
+Muber.config(function($httpProvider){
+  $httpProvider.interceptors.push('authInterceptor');
+});

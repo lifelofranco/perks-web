@@ -1,0 +1,8 @@
+angular.module('Muber.directives')
+  .directive('accountNavbar', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: '<%= asset_path("shared/employee/_accountNavbar.html") %>',
+    }
+  });

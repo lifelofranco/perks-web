@@ -1,0 +1,339 @@
+Muber.config(function ($stateProvider, $urlRouterProvider,$locationProvider)  {
+  $stateProvider
+    .state('app', {
+      url: '/',
+      templateUrl: '<%= asset_path("main/index.html") %>',
+    })
+
+    .state('companies', {
+      abstract: true,
+      url: '/companies',
+      templateUrl: '<%= asset_path("companies/company.html") %>',
+
+    })
+
+    .state('companies.home', {
+      url: '/home',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("companies/home/dashboard.html") %>',
+          controller:'HomeController',
+        }
+      }
+    })
+
+    .state('companies.analytics', {
+      url: '/analytics',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("companies/analytics/show.html") %>',
+          controller:'HomeController',
+        }
+      }
+    })
+
+    .state('companies.manage', {
+      url: '/manage',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("companies/manage/list.html") %>',
+          controller: 'ManageController'
+        }
+      }
+    })
+
+    .state('companies.manage.employee', {
+      abstract: true,
+      url: '/employee',
+      views: {
+        'content@companies': {
+          templateUrl: '<%= asset_path("companies/company/subnavbar.html") %>',
+          controller:'SubNavbarController'
+        }
+      }
+    })
+
+
+    .state('companies.manage.employee.add', {
+      url: '/add',
+      views: {
+        'subcontent': {
+          templateUrl: '<%= asset_path("companies/manage/employee/add.html") %>',
+        }
+      }
+    })
+
+    .state('companies.manage.employee.addOne', {
+      url: '/addOne',
+      views: {
+        'subcontent': {
+          templateUrl: '<%= asset_path("companies/manage/employee/add_one.html") %>',
+        }
+      }
+    })
+
+    .state('companies.manage.employee.detail', {
+      url: '/detail',
+      views: {
+        'subcontent': {
+          templateUrl: '<%= asset_path("companies/manage/employee/detail.html") %>',
+          controller: 'ManageController',
+        }
+      }
+    })
+
+    .state('companies.manage.employee.activity', {
+      url: '/activity',
+      views: {
+        'subcontent': {
+          templateUrl: '<%= asset_path("companies/manage/employee/activity.html") %>',
+          controller: 'ManageController',
+        }
+      }
+    })
+
+
+    .state('companies.manage.perk', {
+      url: '/perk',
+      views: {
+        'content@companies': {
+          templateUrl: '<%= asset_path("companies/manage/perk/add.html") %>',
+          controller: 'PerksController',
+        },
+      }
+    })
+
+
+    .state('companies.company', {
+      abstract: true,
+      url: '/company',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("companies/company/subnavbar.html") %>',
+          controller:'SubNavbarController'
+        }
+      }
+    })
+
+    .state('companies.company.overview', {
+      url: '/overview',
+      views: {
+        'subcontent': {
+          templateUrl: '<%= asset_path("companies/company/overview.html") %>'
+        }
+      }
+    })
+
+    .state('companies.company.profile', {
+      url: '/profile',
+      views: {
+        'subcontent': {
+          templateUrl: '<%= asset_path("companies/company/profile.html") %>'
+        }
+      }
+    })
+
+    .state('companies.company.settings', {
+      url: '/settings',
+      views: {
+        'subcontent': {
+          templateUrl: '<%= asset_path("companies/company/settings.html") %>'
+        }
+      }
+    })
+
+
+    .state('companies.support', {
+      url: '/support',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("shared/_support.html")%>',
+        }
+      }
+    })
+
+    .state('employees', {
+      abstract: true,
+      url:'/employees',
+      templateUrl: '<%= asset_path("employees/employee.html") %>',
+      controller: 'employeeHomeController',
+    })
+
+    .state('employees.exclusives', {
+      url: '/exclusives',
+      tab: 'Exclusives',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/exclusives.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('employees.featured', {
+      url: '/featured',
+      tab: 'Featured',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/deals.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('employees.dining', {
+      url: '/dining',
+      tab: 'Dining',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/deals.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('employees.travel', {
+      url: '/travel',
+      tab: 'Travel',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/deals.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('employees.electronics', {
+      url: '/electronics',
+      tab: 'Electronics',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/deals.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('employees.fitness', {
+      url: '/fitness',
+      tab: 'Fitness',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/deals.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('employees.fitness.voucher', {
+      url: '/voucher/:id',
+      views: {
+        'content@employees': {
+          templateUrl: '<%= asset_path("employees/home/voucher.html") %>',
+          controller: 'VoucherController',
+        }
+      }
+    })
+
+    .state('employees.beauty', {
+      url: '/beauty',
+      tab: 'Beauty',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/deals.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('employees.home', {
+      url: '/home',
+      tab: 'Home',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/deals.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('employees.shopping', {
+      url: '/shopping',
+      tab: 'Shopping',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/deals.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('employees.phones', {
+      url: '/phones',
+      tab: 'Phones',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/home/deals.html") %>',
+          controller: 'employeeHomeController',
+        }
+      }
+    })
+
+    .state('dashboard', {
+      abstract: true,
+      url: '/dashboard',
+      templateUrl: '<%= asset_path("employees/employee/subnavbar.html") %>',
+    })
+
+    .state('dashboard.perks', {
+      url: '/perks',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/employee/my-perks.html") %>',
+          controller: 'employeeDashboardController'
+        }
+      }
+    })
+
+    .state('dashboard.past', {
+      url: '/past',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/employee/past-perks.html") %>',
+          controller: 'employeeDashboardController'
+        }
+      }
+    })
+
+    .state('dashboard.account', {
+      url: '/account',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/employee/my-account.html") %>',
+          controller: 'employeeDashboardController'
+        }
+      }
+    })
+
+    .state('dashboard.interests', {
+      url: '/interests',
+      views: {
+        'content': {
+          templateUrl: '<%= asset_path("employees/employee/my-interests.html") %>',
+          controller: 'employeeDashboardController'
+        }
+      }
+    })
+
+    .state('voucher', {
+      url:'/voucher',
+      templateUrl: '<%= asset_path("employees/home/pdf.html") %>',
+      controller: 'VoucherController'
+    })
+
+  $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode(true);
+
+}).run(function($rootScope, $state) {
+      $rootScope.$state = $state;
+    });

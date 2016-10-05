@@ -1,0 +1,6 @@
+Muber.controller('VoucherController',
+  function($scope, DemoService) {
+    $scope.voucher = DemoService.voucher();
+    $scope.branchOptions = $scope.voucher.branches
+
+});

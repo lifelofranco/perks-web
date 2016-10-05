@@ -1,0 +1,31 @@
+h4.dashboard-title.inline Account Settings
+.row.add-margin-top
+  .col-md-2
+    =image_tag "francis.png", :class => "profile-photo"
+  .col-md-9.col-md-offset-1
+    h5.uppercase Upload your Photo
+    p Image Size be at least 300px by 300px
+    button.btn.btn-primary.btn-wide.add-margin-top.uppercase type="submit" Upload Photo
+h4.add-margin-top.row-spacing Basic Information
+.row-spacing.row
+  .col-md-2
+    input.form-control type="text" value="" placeholder= "First Name"
+  .col-md-2.no-padding-left
+    input.form-control type="text" value="" placeholder= "Last Name"
+  .col-md-4
+    input.form-control type="text" value="" placeholder= "Email Address"
+.row-spacing.row
+  .col-md-4
+    input.form-control type="password" value="" placeholder= "Password"
+  .col-md-4
+    input.form-control type="password" value="" placeholder= "Confirm Password"
+hr
+h4.add-margin-top.uppercase Password Required
+p.add-margin-top For account protection, your password is required to save changes to your settings.
+.row
+  .col-md-4
+    input.form-control.add-margin-top type="password" placeholder = "Old Password"
+hr
+.row-spacing.add-margin-top
+  button.btn.btn-primary.btn-wide.second-space type="submit"  Save
+  button.btn.btn-default Cancel

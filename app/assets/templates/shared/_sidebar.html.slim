@@ -1,0 +1,57 @@
+#sidebar.col-sm-2.col-xs-1.remove-padding
+  ul.nav
+    li
+      a.visible-xs.text-center data-toggle="offcanvas" href="#"
+        i.glyphicon.glyphicon-chevron-right
+  .muber-logo.hidden-xs
+    .perks-logo
+      = image_tag "muber-perks.png", size: "40x40", alt: "Muber Perks Logo", title: "Muber Perks Logo"
+      a href="/companies/home" Perks
+    = image_tag "francis.png" , :class => "photo-sidebar", size:"70x71"
+    p Francis Plaza
+    p.title HR Manager
+  ul#lg-menu.nav.hidden-xs
+    li ui-sref-active="active"
+      a ui-sref=".home" title="Home"
+        i.fa.fa-home.white
+        | Home
+    li ui-sref-active="active"
+      a ui-sref=".analytics" title="Analytics"
+        i.fa.fa-bar-chart-o.white
+        | Analytics
+    li ng-class="{active: $state.includes('companies.manage')}"
+      a ui-sref=".manage" title="Manage"
+        i.fa.fa-sliders.white
+        | Manage
+    li ng-class="{active: $state.includes('companies.company')}"
+      a ui-sref=".company.overview" title="Company"
+        i.fa.fa-briefcase.white
+        | Company
+    li ui-sref-active="active"
+      a ui-sref=".support" title="Support"
+        i.fa.fa-question-circle.white
+        | Support
+    li ng-controller="UsersController"
+        a href="/#" ng-click="submitLogout()" title="Logout"
+          i.fa.fa-power-off.white
+          | Logout
+
+  ul#xs-menu.nav.visible-xs
+    li ng-class="{active: tab === 'home'}"
+      a.text-center href="/companies/home" title="Home"
+        i.fa.fa-home.white
+    li ng-class="{active: tabl === 'analytics'}"
+      a.text-center href="/companies/analytics/show" title="Analytics"
+        i.fa.fa-bar-chart-o.white
+    li ng-class="{active: tab === 'manage' || subtab === 'option1' || subtab === 'option2' }"
+      a.text-center href="/companies/manage/list" title="Manage"
+        i.fa.fa-sliders.white
+    li ng-class="{active: tab === 'company' || subtab === 'companyOption1' || subtab === 'companyOption2' || subtab === 'companyOption3'}"
+      a.text-center href="/companies/company/overview" title="Company"
+        i.fa.fa-briefcase.white
+    li ng-class="{active: tab === 'support'}"
+      a.text-center href="/companies/support" title="Support"
+        i.fa.fa-question-circle.white
+    li ng-controller="UsersController"
+      a.text-center href="#" ng-click="submitLogout()" title="Logout"
+        i.fa.fa-power-off.white

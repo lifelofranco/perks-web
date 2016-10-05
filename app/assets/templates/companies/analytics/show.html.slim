@@ -1,0 +1,48 @@
+.sub-navbar.bg-white
+  h3 Analytics
+.app-body.bg-gray
+  ul.graph-widget
+    li
+      mb-chart-line config="config" mb-chart-title="Perks used by period" metric-name="company_perks_metric"
+    li
+      .flip-container
+        #savings.flipper
+          .front.widget
+            h5.padding-title.inline Savings and Expenses
+            .options-graph.inline
+              span.encircle-icon.second-space.ss-icon.ss-symbolicons-line.ss-pen ng-click="flip('#savings')"
+              span.encircle-icon.ss-icon.ss-symbolicons-line.ss-download
+            p.date-range-label
+              | {{labelDate2Range}}
+            highchart config="areaConfig"
+
+          .back.widget
+            .done-header
+              button.btn.done-button type="submit" ng-click="flip('#savings')" Done
+            .back-padding
+              p This graph shows the different perks used over a period according to the perk type.
+              .date-range
+                span.input-icon.ss-icon.ss-symbolicons-line.ss-calendar
+                input.inline.form-control type="daterange" ng-model="dates2" ranges="ranges2"
+    li
+      .flip-container
+        #value.flipper
+          .front.widget
+            h5.padding-title.inline Perk Value
+
+            .options-graph.inline
+              span.encircle-icon.second-space.ss-icon.ss-symbolicons-line.ss-pen ng-click="flip('#value')"
+              span.encircle-icon.ss-icon.ss-symbolicons-line.ss-download
+            p.date-range-label
+              | {{labelDate3Range}}
+            highchart config="stackedColumn"
+
+
+          .back.widget
+            .done-header
+              button.btn.done-button type="submit" ng-click="flip('#value')" Done
+            .back-padding
+              p This graph shows the different perks used over a period according to the perk type.
+              .date-range
+                span.input-icon.ss-icon.ss-symbolicons-line.ss-calendar
+                input.inline.form-control type="daterange" ng-model="dates3" ranges="ranges3"

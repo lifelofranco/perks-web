@@ -1,0 +1,84 @@
+.about-me {
+   p {
+     font-size:14px;
+     margin-top: 25px;
+   }
+   ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+   }
+   .preferences{
+
+    li {
+      display: inline-block;
+      background-color: transparent;
+      padding: 5px 20px;
+      border-radius: 5px;
+      margin-right: 7px;
+      font-size: 13px;
+      cursor: pointer;
+      border: 2px solid #79c4ba;
+      color: #79c4ba;
+    }
+    .yellow {
+      border: 2px solid #f0c330;
+      color: #f0c330;
+
+    }
+    .yellow:before {
+      content: "✔";
+      margin-right: 5px;
+      border: 1px solid;
+      @include border-radius(100%);
+      padding: 0px 3px;
+      font-size: 10px;
+    }
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .interests {
+    text-align: center;
+    margin-top: 3%;
+
+    .inline {
+      width: 25%;
+    }
+  }
+
+  .green-outline{
+    background-color: transparent;
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 75%;
+    font-size: 13px;
+    cursor: pointer;
+    border: 2px solid #79c4ba;
+    color: #79c4ba;
+    font-weight: 400;
+    text-align: left;
+  }
+  .removeCheckbox {
+    display:none;
+  }
+
+  .choices {
+    display: inline-block;
+    width: 100%;
+
+    span {
+      position: relative;
+      top: 2px;
+      float: right;
+    }
+  }
+
+  .active-interest {
+    border: 2px solid #fd7b7e !important;
+    color: #fd7b7e;
+  }
+}

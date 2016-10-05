@@ -1,0 +1,22 @@
+Muber.controller('SubNavbarController',
+  function($scope, DemoService, $state) {
+    $scope.tab = $state.current.name;
+    if($state.current.name==="companies.company.overview") {
+    $scope.title = 'Company';
+    $scope.navbarOptions = [{"label": 'Overview', 'link':'overview' },
+                            {"label": 'Profile', 'link':'profile'},
+                            {"label": 'Settings', 'link': 'settings'}]
+    }
+  else if($state.current.name==='companies.manage.employee.add') {
+    $scope.title = 'Add Employees';
+    $scope.navbarOptions = [{"label": 'Upload or Drop CSV File', 'link':'add' },
+                            {"label": 'Add One by One', 'link':'addOne'}]
+  }
+
+  else if($state.current.name==='companies.manage.employee.detail' || $state.current.name==='companies.employee.activity') {
+    $scope.title = 'Bryan Conde';
+    $scope.navbarOptions = [{"label": 'Detail', 'link':'detail' },
+                            {"label": 'Activity', 'link':'activity'}]
+  }
+
+});

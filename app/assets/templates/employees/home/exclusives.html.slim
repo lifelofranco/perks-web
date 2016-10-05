@@ -1,0 +1,88 @@
+script type="text/ng-template" id="employee-perk-info"
+  .perk-info
+    .head
+      h5 Details
+      p
+        | {{merchant.name}}, All branches
+    .body.bg-midnight-blue
+      .background-merchant &nbsp;
+      .body-padding.row
+        .col-md-8
+          .text-title
+            h5
+              | {{merchant.name}}
+            p
+              | {{merchant.perk}}
+            span.ratings ng-repeat="r in rating"
+              i.fa.fa-star
+            h6 ng-show="merchant.usage=='subscription'"
+              | Subscribe Perk
+            h6 ng-show="merchant.usage=='regular'"
+              | CODE X2163347
+        .col-md-3
+          img ng-src= "{{merchant.logo}}"
+    nav.navbar-default role="navigation"
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li.list-border
+            a href="" ng-model="selection" ng-click="changeSelection('How to Use')"
+              | How to Use
+
+          li.list-border
+            a href="" ng-model="selection" ng-click="changeSelection('Fine Print')"
+              | Fine Print
+          li.list-border
+            a href="" ng-model="selection" ng-click="changeSelection('Locations')"
+              | Locations
+          li
+            a href="" ng-model="selection" ng-click="changeSelection('Reviews')"
+              | Reviews
+    .detail
+      .animate-switch-container ng-switch="" on="selection"
+        .animate-switch ng-switch-when="How to Use"
+          p
+            | {{merchant.description}}
+        .animate-switch ng-switch-when="Fine Print"
+          p
+            | {{merchant.phone_number}}
+        .animate-switch ng-switch-when="Locations"
+          p
+            | {{merchant.street_address_1}}
+        .animate-switch ng-switch-when="Reviews"
+          p
+            | {{merchant.website}}
+
+.staff-picks
+  h4
+    | {{employeeHomeTab}}
+  .row
+    .col-md-2.no-padding
+      .categories
+        ul
+          li.remove-padding
+            span.input-icon.ss-icon.ss-symbolicons-line.ss-search
+            input.search placeholder="SEARCH" type="search" ng-model="searchperk"
+
+          sub-sidebar
+    .col-md-10.remove-padding
+      .deal-card ng-repeat="merchant in merchants | filter:searchperk"
+        .deal-pic.first-view
+          img.deal-image ng-src= "{{merchant.logo}}"
+          .mask-view
+            h3
+              | {{merchant.perk}}
+            a.btn.button-yellow ng-click="openPopover(merchant)"
+              i.fa.fa-star
+              | GET PERK
+
+        .card-bottom
+          .inline
+            h5
+              | {{merchant.name}}
+            p Power Plant Mall, The Fort Strip, more
+          span.discount
+           | {{merchant.discount}}
+        .used-by
+          p
+            | Francis & 10 others bought this
+            i.fa.fa-heart

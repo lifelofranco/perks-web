@@ -1,0 +1,21 @@
+div
+  .flip-container
+    #activity.flipper
+      .front.widget
+        h5.title.inline
+          | {{ mbChartTitle }}
+        .options-graph.inline
+          span.encircle-icon.second-space.ss-icon.ss-symbolicons-line.ss-pen ng-click="flip()"
+          span.encircle-icon.ss-icon.ss-symbolicons-line.ss-download
+        p.date-range-label
+          | {{ formattedStartDate }} - {{ formattedEndDate }}
+        .chart
+
+      .back.widget
+        .done-header
+          button.btn.done-button type="submit" ng-click="flip()" Done
+        .back-padding
+          p This graph shows the different perks used over a period according to the perk type.
+          .date-range
+            span.input-icon.ss-icon.ss-symbolicons-line.ss-calendar
+            input.inline.form-control type="daterange" ng-model="dates" ranges="ranges"

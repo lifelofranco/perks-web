@@ -1,0 +1,81 @@
+
+//my-account
+
+ul.menu {
+    margin-top: 30px;
+    margin-bottom: 45px;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+
+  li {
+    display: inline-block;
+    width: 25%;
+    list-style: none;
+    text-align: center;
+    border-bottom: 4px solid #EEEEEE;
+    font-size: 15px;
+    padding-bottom: 7px;
+  }
+
+  a:hover {
+    color: #16a085;
+  }
+  .active {
+    border-bottom: 4px solid #fbda7b;
+  }
+  a {
+    color: #7F8C8D;
+  }
+}
+
+.dashboard-title {
+  font-family: $base-font;
+  font-size: 23px !important;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.my-perks {
+  button {
+    display: block;
+  }
+  .btn {
+    @include border-radius(0px);
+    width: 100%;
+  }
+  img {
+    width: 120px;
+    margin: 0 auto;
+    display: block;
+  }
+  th {
+    font-size:13px;
+  }
+  .info {
+    font-weight:500;
+  }
+  span {
+    margin-top:19px;
+    a {
+      cursor:pointer;
+    }
+  }
+  select {
+    margin-left: 30px;
+    width: 18%;
+  }
+}
+
+.no-padding-left {
+  padding-left:0;
+}
+
+.employee-profile-picture {
+  position: relative;
+  bottom: 3px;
+}
+
+.title-margin {
+  margin-top: 5vw;
+}

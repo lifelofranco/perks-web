@@ -1,0 +1,125 @@
+#sidebar {
+  background-color: $sidebar-blue;
+  max-width: 250px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .active {
+    background-color: #2b333b;
+    border-left: 3px solid #fbda7b !important;
+    margin-bottom: 10px;
+    margin-top: 12px;
+
+    a {
+      background-color: #2b333b;
+      color: #fbda7b !important;
+    }
+
+    i {
+      color: #fbda7b !important;
+      font-size: 16px;
+    }
+  }
+
+  .nav {
+    li {
+      font-size: 12px;
+      padding-left: 7%;
+      text-transform: uppercase;
+    }
+
+    i {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    a {
+      color: #fff;
+      padding-left: 7.5%;
+    }
+
+    li:hover,
+    li:active {
+      background-color: #2b333b;
+      border-left: 3px solid #fbda7b;
+    }
+
+    a:hover,
+    a:active {
+      background-color: #2b333b;
+      color: #fbda7b !important;
+
+      i {
+        color: #fbda7b !important;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .muber-logo {
+    background-color: #2b394e;
+    border: solid 2px #293242;
+    margin-bottom: 25px;
+    padding: 10px 0;
+    text-align: center;
+
+    a {
+      color: $white;
+      cursor: pointer;
+      font-family: 'Raleway';
+      font-size: 33px;
+      font-weight: 200;
+      margin-bottom: 0;
+      margin-left: 10px;
+      position: relative;
+      top: 7px;
+    }
+  }
+
+  .photo-sidebar {
+    @include box-shadow(0 0 8px rgba(0, 0, 0, .21));
+    @include border-radius(100%);
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+
+  p {
+    color: #bcc4d0;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    margin-top: 7px;
+    }
+
+  .title {
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  @media (max-width: 767px) {
+    li {
+      padding-left: 20% !important;
+    }
+
+    li:hover,
+    li:active {
+      background-color: #2b333b;
+      border-left: none !important;
+    }
+    .active {
+      border-left: none !important;
+    }
+
+    a {
+      padding: 15px 0;
+    }
+  }
+}

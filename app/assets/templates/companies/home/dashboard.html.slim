@@ -1,0 +1,55 @@
+.wrap
+  .app-content
+    .sub-navbar.border
+      h3 Dashboard
+    .app-body
+      .widget
+        h5.padding-original Team Overview
+        highchart#chart1 config="chartConfig"
+        .list-stats
+          .stats
+            .background-icon.blue-icon
+              span.ss-icon.ss-symbolicons-block.ss-user
+            .stat-description
+              h4 168
+              p Registered Employees
+
+          .stats
+            .background-icon.red-icon
+              span.ss-icon.ss-symbolicons-block.ss-ticket
+            .stat-description
+              h4 259
+              p Total Perks Used
+
+          .stats
+            .background-icon.green-icon
+              span.ss-icon.ss-symbolicons-block.ss-star
+            .stat-description
+              h4 P2560
+              p Total Savings
+      .row
+        .col-md-8
+          .no-margin-top.widget
+            .padding-original
+              h5 Perk Usage
+              highchart config="pieConfig"
+        .col-md-4
+          .widget
+            .padding-original
+              h5 Live Activity
+              .notification
+                .row
+                  .no-padding.col-md-2
+                    =image_tag "leo.png", :class => 'profile-photo'
+                  .col-md-10
+                    | Leo Lofranco just saved P100 from the Golds Gym Perk
+                .time-stamp Just an hour ago
+              .notification
+                .row
+                  .no-padding.col-md-2
+                    =image_tag "bryan.png", :class => 'profile-photo'
+                  .col-md-10
+                    | Bryan Conde just saved P300 from the Bon-Chon Perk
+                .time-stamp Just 3 hours ago
+    script
+      | $("select").selectpicker({style: 'btn btn-primary', menuStyle: 'dropdown-inverse'});

@@ -1,0 +1,54 @@
+angular.module('Muber.directives')
+  .directive('navbar', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: '<%= asset_path("shared/_navbar.html") %>',
+      controller: function($scope, DemoService) {
+        $scope.lists = [{
+            "icon":"ss-star",
+            "text":"Exclusives",
+            "link":"exclusives"
+          },{
+            "icon":"ss-crown",
+            "text":"Featured",
+            "link":"featured",
+          }, {
+            "icon":"ss-utensils",
+            "text":"Dining",
+            "link":"dining"
+          }, {
+            "icon":"ss-plane",
+            "text":"Travel",
+            "link":"travel"
+          }, {
+            "icon":"ss-laptop",
+            "text":"Electronics",
+            "link":"electronics"
+          }, {
+            "icon":"ss-exercise",
+            "text":"Fitness",
+            "link":"fitness"
+          }, {
+            "icon":"ss-robot",
+            "text":"Beauty",
+            "link":"beauty"
+          }, {
+            "icon":"ss-home",
+            "text":"Home",
+            "link":"home"
+          }, {
+            "icon":"ss-tshirt",
+            "text":"Shopping",
+            "link":"shopping"
+          }, {
+            "icon": "ss-cell",
+            "text":"Phones",
+            "link":"phones"
+          }];
+
+        $scope.deals = DemoService.deals();
+
+      }
+    }
+  });

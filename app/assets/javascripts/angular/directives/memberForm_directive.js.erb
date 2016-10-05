@@ -1,0 +1,46 @@
+angular.module('Muber.directives')
+  .directive('addMemberForm', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: '<%= asset_path("shared/_addMemberForm.html") %>',
+      controller: function($scope){
+        $scope.members=[{id:1}];
+
+        $scope.addNewMember= function(){
+          var newItemNo = $scope.members.length+1;
+          console.log(newItemNo);
+          $scope.members.push({'id': newItemNo});
+        };
+
+        $scope.totaldays = 31;
+
+        $scope.days = [];
+        for (var i = 0; i < $scope.totaldays; i+=1) {
+          $scope.days.push({value: i+1, day: i + 1});
+        }
+
+        $scope.totalyears = 100;
+
+        $scope.years = [];
+        for (var i = 2014; i > 2014 - $scope.totalyears; i--) {
+          $scope.years.push({value: i-1, year: i - 1});
+        }
+
+        $scope.months = [
+          { value: 1, name: 'January' },
+          { value: 2, name: 'February' },
+          { value: 3, name: 'March' },
+          { value: 4, name: 'April' },
+          { value: 5, name: 'May' },
+          { value: 6, name: 'June' },
+          { value: 7, name: 'July' },
+          { value: 8, name: 'August' },
+          { value: 9, name: 'September' },
+          { value: 10, name: 'October' },
+          { value: 11, name: 'November' },
+          { value: 12, name: 'December' }
+      ];
+    }
+  }
+});

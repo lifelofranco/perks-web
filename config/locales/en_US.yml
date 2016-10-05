@@ -1,0 +1,36 @@
+en_US:
+  shared:
+    login: Log in
+    perks: Perks
+  index:
+    navbar:
+      employers_label: For Employers
+      merchants_label: For Merchants
+      perks_label: The Perks
+    hero:
+      promotional_header: We've put in the hard work to make your employees happy.
+      promotional_sub: Your employees are the most valuable resources you have. Let them feel appreciated and recognized for their work while you reap the benefits of improved morale, increased job satisfaction, and better retention rates. Ready to get started?
+      request_demo: Request a Demo for FREE
+    promotional:
+      promo_item_1_header: Increase Productivity
+      promo_item_1_sub: Reward your employees; a happy employee is a productive one.
+      promo_item_2_header: Recruitment and Retention
+      promo_item_2_sub: Create a cohesive culture through teambuilding and rewards.
+      promo_item_3_header: Easily Customizable
+      promo_item_3_sub: Customize your platform and perks that best suits your team.
+    for_employers_merchants:
+      for_employers_header: For Employers
+      for_merchants_header: For Merchants
+      for_employers_body: Looking to increase productivity and employee happiness in your workplace? Save money and reward your employees with exclusive suite of corporate perks customized to your staff's lifestyle and culture. Say goodbye to convoluted spreadsheets. Say hello to employee perk management done right.
+      for_merchants_body: Tired of paying for expensive ads with low conversion rates? Grow your revenue with targeted advertisements and data you can understand. Offer your discounts to people you care about and know what they really want.
+      request_demo: Request a Free Demo
+    request_form:
+      thank_you: Thank You!
+      thank_you_sub: We'll respond to your request within 48 hours.
+      labels:
+        first_name: First Name
+        last_name: Last Name
+        company: Company
+        email_address: Email Address
+        phone_number: Phone Number
+        request_demo_submit: Request a demo

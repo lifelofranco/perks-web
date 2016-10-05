@@ -1,0 +1,17 @@
+div ng-repeat="merchant in merchants"
+  h1 Merchant
+  p
+    strong Name:
+    | {{ merchant.name }}
+  p
+    strong Description:
+    | {{ merchant.description }}
+  p
+    strong Address:
+    | {{ merchant.street_address_1 }} {{ merchant.street_address_2 }}, {{ merchant.city }}, {{ merchant.state }} {{ merchant.zip_code }}, {{ merchant.country }}
+  p
+    strong Phone Number:
+    | {{ merchant.phone_number }}
+  p
+    strong Website:
+    | {{ merchant.website }}

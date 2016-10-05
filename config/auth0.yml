@@ -1,0 +1,17 @@
+default: &default
+  domain: muber.auth0.com
+
+development: &development
+  <<: *default
+  client_id: G4Fx4NbsHWAnJENL9i0TBzcDy0juny5t
+  client_secret: HlSYWCAJ2p2akfUzSk9pB5M1qaLSxdYX5JptkahDDWM03bbwzHIl7ymPV5K_5RIJ
+  api_id: pgzRTetD3BuVPww9urfpPYux4bu5thJ9
+  api_secret: Ii_ffDUo5VRsXszJwBO1EGSRUZGk6uRDzcGdJi20k7QQRO7WE_B2hT9ErtxUeRIy
+  callback_url: http://perks.dev/
+
+staging:
+  <<: *development
+  callback_url: https://staging.dev.perks.muber.com/
+
+test:
+  <<: *development

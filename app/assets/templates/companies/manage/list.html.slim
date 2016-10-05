@@ -1,0 +1,92 @@
+.sub-navbar
+  h3 Manage
+  .list-action
+    .action.box-shadow-blue
+      .action-icon.light-blue
+        h4.ss-icon.ss-symbolicons-block.ss-users
+      .action-description
+        h4 Employees
+        a.btn.btn-primary type="submit" ui-sref="companies.manage.employee.add" Add Member
+
+    .action.box-shadow-red
+      .action-icon.light-red
+        h4.ss-icon.ss-symbolicons-block.ss-crown ng-controller="PerksController"
+      .action-description
+        h4 Perks
+        a.btn.btn-primary type="submit" ui-sref="companies.manage.perk" Add Perks
+
+    .action.no-margin-right.box-shadow-yellow ng-controller="PerksManageController"
+      .action-icon.light-yellow
+        h4.ss-icon.ss-symbolicons-block.ss-pen
+      .action-description
+        h4 Suggest Perk
+        a.btn.btn-primary type="submit" ng-click="open()" Recommend
+
+.employee-list-bar.btn-padding
+  h4 All Employees
+  .form-group.inline.pull-right
+    input.form-control.search-member placeholder="search" type="search" ng-model="search"
+    span.input-icon.ss-icon.ss-symbolicons-line.ss-search
+
+
+.app-body ng-controller="ManageController"
+  div ng-show="showEditDelete"
+    button.wide-button.outline-button.edit-margin type="submit" ng-click="removeEmployee()" Delete
+  .table-responsive.table_margin
+    table.table.table-striped.table-hover.table-bordered
+      thead
+        tr
+          th
+          th Employee ID
+          th Department
+          th First Name
+          th Last Name
+          th Perks Used
+          th Date Added
+      tr.pointer-cursor.search-table ng-repeat="employee in employees | filter:search"
+        td
+          input.fa-2x type="checkbox" ng-change="triggerShowEditDelete()" ng-model="employee.checked" /
+        td ng-click="clickedEmployee(employee)"
+          | {{employee.employee_id}}
+        td ng-click="clickedEmployee(employee)"
+          | {{employee.department}}
+        td ng-click="clickedEmployee(employee)"
+          | {{employee.first_name}}
+        td ng-click="clickedEmployee(employee)"
+          | {{employee.last_name}}
+        td ng-click="clickedEmployee(employee)"
+          | {{employee.perk_used}}
+        td ng-click="clickedEmployee(employee)"
+          | {{employee.date_added}}
+      tr ng-if="!(employees | filter:search).length"
+        td.centered-contents colspan="6"
+          h5 No Results found
+
+
+
+script type="text/ng-template" id="suggest-perk"
+  .suggest-perk
+    .head
+      h5 Great! Let us know about it.
+    .body
+      label
+        | Company Name
+        input.form-control type="text" placeholder="Name" ng-model="company.name"
+      .row
+        .col-md-6.no-padding-right
+          label.no-padding
+            | Address
+            input.form-control type="text" placeholder="Line 1" ng-model="company.line1"
+        .col-md-6.button-margin-top
+          input.form-control placeholder="Line 2" type="text" ng-model="company.line2"
+      label
+        | Company Contact Email
+        input.form-control type="text" placeholder="Contact Email" ng-model="company.email"
+    .foot.add-margin-top
+        ul.cd-buttons
+          li
+            a ng-click="checkInput()"
+              | Recommend
+          li
+            a ng-click="closeThisDialog"
+              | Cancel
